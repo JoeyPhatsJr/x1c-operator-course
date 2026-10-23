@@ -689,6 +689,11 @@ footer .in { max-width: 1240px; margin: 0 auto; padding-block: 22px 36px; displa
 .lab-sign { display: flex; gap: 10px; align-items: center; padding: 12px 16px; border-top: 1px solid var(--line); font-size: 0.92rem; cursor: pointer; }
 .lab-sign input { width: 18px; height: 18px; margin: 0; accent-color: var(--green-ink); }
 .lesson.lab.done .lab-head { background: var(--green-soft); }
+.dl { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-radius: 14px; background: var(--u, var(--green-ink)); color: var(--on-u, #fff); text-decoration: none; font-weight: 700; font-size: 1rem; line-height: 1.25; }
+.dl svg { width: 26px; height: 26px; flex: none; fill: none; stroke: currentColor; stroke-width: 2.2; stroke-linecap: round; stroke-linejoin: round; }
+.dl small { display: block; margin-top: 2px; font-family: var(--f-mono); font-size: 0.68rem; font-weight: 500; opacity: .85; overflow-wrap: anywhere; }
+.dl:hover { filter: brightness(1.06); }
+.dl.missing { background: var(--surface-2); color: var(--muted); cursor: default; filter: none; }
 @media (max-width: 1020px) {
   .lx, .lab-b, .ts-body, .su-figs { grid-template-columns: minmax(0, 1fr); }
 }
@@ -1950,7 +1955,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
     <header class="unit-head">
       <span class="unit-tag">Practice · six labs · do them in order</span>
       <h2>Practice labs</h2>
-      <p>This is where reading turns into skill. Each lab is a real print that builds on the one before and puts you in front of a common problem on purpose. Ask a lead for the lab's file and which printer to use. A mentor checks your result and ticks the box.</p>
+      <p>This is where reading turns into skill. Each lab is a real print that builds on the one before and puts you in front of a common problem on purpose. Download each lab's model from its card, and ask a lead which printer to use. A mentor checks your result and ticks the box.</p>
     </header>
     <div class="labs">
 
@@ -1961,7 +1966,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
           <p><strong>Goal:</strong> run the whole workflow once from start to finish, and learn how our printers size holes.</p>
           <h4>Steps</h4>
           <ol>
-            <li>Get the team's fit gauge file (a bar of stepped holes for 1/2" hex, a bearing and #10-32 bolts) from a lead.</li>
+            <li>Download the fit gauge model with the button on this card. It's a bar of stepped holes for 1/2" hex, a bearing and #10-32 bolts.</li>
             <li>Import it into Bambu Studio. Printer: X1C 0.4. Plate: Textured PEI. Filament: Bambu PLA Basic (or Generic PLA). Process: 0.20mm Standard.</li>
             <li>Slice it and read the Preview: layer count, time, grams.</li>
             <li>Export plate sliced file to the root of that printer's microSD card as <code>FitGauge_PLA_P#_Initials</code>.</li>
@@ -1971,6 +1976,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
         </div>
         <div style="display: grid; gap: 12px; align-content: start;">
           <div class="lab-pass"><strong>You pass when</strong><ul><li>The file was sliced for the right printer and plate</li><li>You called the first layer correctly</li><li>The fit card has your measured sizes</li></ul></div>
+          <a class="dl" data-file="Lab1-FitGauge_PLA.3mf" href="https://joeyphatsjr.github.io/x1c-operator-course/labs/Lab1-FitGauge_PLA.3mf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg><span>Download the model<small>Lab1-FitGauge_PLA.3mf · opens in Bambu Studio</small></span></a>
           <figure class="photo" data-photo="lab-1" data-cap="A finished fit gauge"></figure>
         </div>
       </div>
@@ -1984,7 +1990,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
           <p><strong>Goal:</strong> make a part strong on purpose using orientation, wall loops and a modifier.</p>
           <h4>Steps</h4>
           <ol>
-            <li>Get the lab bracket file (an L-bracket with two bolt holes) from a lead.</li>
+            <li>Download the L-bracket model (two bolt holes) with the button on this card.</li>
             <li>Before slicing, tell your mentor where the load goes. Then use <span class="ui">Lay on face</span> (<kbd>F</kbd>) to orient it for strength (5.1).</li>
             <li>Strength tab: wall loops 5, sparse infill 30%, gyroid.</li>
             <li>Right-click the part › <span class="ui">Add modifier</span> › cylinder. Place one over each bolt hole and set sparse infill to 100% on it.</li>
@@ -1994,6 +2000,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
         </div>
         <div style="display: grid; gap: 12px; align-content: start;">
           <div class="lab-pass"><strong>You pass when</strong><ul><li>You explained the load and orientation before slicing</li><li>The modifier shows as solid in Preview</li><li>It bolts down without cracking</li></ul></div>
+          <a class="dl" data-file="Lab2-LBracket_PETG.3mf" href="https://joeyphatsjr.github.io/x1c-operator-course/labs/Lab2-LBracket_PETG.3mf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg><span>Download the model<small>Lab2-LBracket_PETG.3mf · opens in Bambu Studio</small></span></a>
           <figure class="photo" data-photo="lab-2" data-cap="A finished bracket bolted down"></figure>
         </div>
       </div>
@@ -2007,7 +2014,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
           <p><strong>Goal:</strong> control supports instead of accepting whatever the slicer adds.</p>
           <h4>Steps</h4>
           <ol>
-            <li>Get the lab sensor mount (an overhanging ledge plus two side holes, one round and one teardrop) from a lead.</li>
+            <li>Download the sensor mount model with the button on this card. It has an overhanging ledge plus two side holes, one round and one teardrop.</li>
             <li>Slice with supports <strong>off</strong>. In Preview, point out every place that prints on air.</li>
             <li>Turn on supports, type <code>tree(auto)</code>. Use <span class="ui">Support painting</span> to paint a <strong>blocker</strong> inside the round hole.</li>
             <li>Turn on <span class="ui">On build plate only</span> if the ledge still gets support. Re-slice and compare grams with and without supports.</li>
@@ -2017,6 +2024,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
         </div>
         <div style="display: grid; gap: 12px; align-content: start;">
           <div class="lab-pass"><strong>You pass when</strong><ul><li>There are no supports inside the blocked hole</li><li>Supports came off without damaging the part</li><li>You can explain when you'd split a part instead</li></ul></div>
+          <a class="dl" data-file="Lab3-SensorMount_PLA.3mf" href="https://joeyphatsjr.github.io/x1c-operator-course/labs/Lab3-SensorMount_PLA.3mf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg><span>Download the model<small>Lab3-SensorMount_PLA.3mf · opens in Bambu Studio</small></span></a>
           <figure class="photo" data-photo="lab-3" data-cap="The sensor mount with supports, and after removal"></figure>
         </div>
       </div>
@@ -2030,7 +2038,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
           <p><strong>Goal:</strong> feed filament without the AMS, and print a flexible robot part.</p>
           <h4>Steps</h4>
           <ol>
-            <li>Get the lab grip pad or intake roller file from a lead.</li>
+            <li>Download the grip roller model with the button on this card.</li>
             <li>Hang the TPU spool on the rear holder. On the touchscreen, set <span class="ui">Ext</span> to TPU (Generic TPU for other brands) and tap <span class="ui">Load</span>.</li>
             <li>In Studio, choose the TPU preset (<code>Bambu TPU 95A HF</code> or <code>Generic TPU</code>) and slice.</li>
             <li>Export to the SD card. When you start the print, turn <strong>Use AMS off</strong>.</li>
@@ -2040,6 +2048,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
         </div>
         <div style="display: grid; gap: 12px; align-content: start;">
           <div class="lab-pass"><strong>You pass when</strong><ul><li>The TPU never went through the AMS</li><li>Use AMS was off</li><li>The printer was left unloaded and clean</li></ul></div>
+          <a class="dl" data-file="Lab4-GripRoller_TPU.3mf" href="https://joeyphatsjr.github.io/x1c-operator-course/labs/Lab4-GripRoller_TPU.3mf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg><span>Download the model<small>Lab4-GripRoller_TPU.3mf · opens in Bambu Studio</small></span></a>
           <figure class="photo" data-photo="lab-4" data-cap="A finished TPU part"></figure>
         </div>
       </div>
@@ -2053,7 +2062,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
           <p><strong>Goal:</strong> print a part longer than 256 mm by splitting it in Studio.</p>
           <h4>Steps</h4>
           <ol>
-            <li>Get the lab long part (about 330 mm) from a lead and import it. Notice it won't fit on the plate.</li>
+            <li>Download the long rail model (330 mm) with the button on this card and import it. Notice it won't fit on the plate.</li>
             <li>Use <span class="ui">Cut</span> (<kbd>C</kbd>) to split it on a low-stress face. Add <strong>dowel</strong> connectors so the halves line up.</li>
             <li>Lay each piece flat for strength. Use <span class="ui">Add plate</span> so each half has its own plate if needed.</li>
             <li>Slice all plates. Export <strong>each plate's</strong> sliced file to the card with clear names (<code>_A</code>, <code>_B</code>).</li>
@@ -2062,6 +2071,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
         </div>
         <div style="display: grid; gap: 12px; align-content: start;">
           <div class="lab-pass"><strong>You pass when</strong><ul><li>The halves line up with no visible step</li><li>Both plates were exported and named clearly</li><li>The joint isn't on the highest-stress spot</li></ul></div>
+          <a class="dl" data-file="Lab5-LongRail_PLA.3mf" href="https://joeyphatsjr.github.io/x1c-operator-course/labs/Lab5-LongRail_PLA.3mf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg><span>Download the model<small>Lab5-LongRail_PLA.3mf · opens in Bambu Studio</small></span></a>
           <figure class="photo" data-photo="lab-5" data-cap="The two halves joined"></figure>
         </div>
       </div>
@@ -2085,6 +2095,7 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
         </div>
         <div style="display: grid; gap: 12px; align-content: start;">
           <div class="lab-pass"><strong>You pass when</strong><ul><li>No corners lifted</li><li>The fits match your Lab 1 numbers</li><li>A mentor approves it for the robot</li></ul></div>
+          <a class="dl" data-file="Lab6-Gusset_PAHT-CF.3mf" href="https://joeyphatsjr.github.io/x1c-operator-course/labs/Lab6-Gusset_PAHT-CF.3mf" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11m0 0-4.5-4.5M12 15l4.5-4.5M5 19h14"/></svg><span>Download the model<small>Lab6-Gusset_PAHT-CF.3mf · opens in Bambu Studio</small></span></a>
           <figure class="photo" data-photo="lab-6" data-cap="A finished PAHT-CF part on the robot"></figure>
         </div>
       </div>
@@ -3159,6 +3170,25 @@ tbody tr:nth-child(even) td { background: color-mix(in srgb, var(--surface-2) 55
       units.forEach(function (u) { uo.observe(u); });
     }
     SKIN.ready = true;
+  })();
+
+  /* ---------- Lab model downloads (files live in the GitHub repo's labs/ folder) ---------- */
+  (function () {
+    var BASE = "https://joeyphatsjr.github.io/x1c-operator-course/labs/";
+    var onPages = location.hostname === "joeyphatsjr.github.io";
+    function missing(a) {
+      a.classList.add("missing"); a.removeAttribute("href"); a.setAttribute("aria-disabled", "true");
+      var s = a.querySelector("small"); if (s) s.textContent = "Not uploaded yet · ask a lead";
+    }
+    document.querySelectorAll("a.dl[data-file]").forEach(function (a) {
+      var f = a.getAttribute("data-file");
+      if (onPages) {
+        a.href = "labs/" + f; a.setAttribute("download", f);
+        fetch("labs/" + encodeURIComponent(f), { method: "HEAD", cache: "no-store" }).then(function (r) { if (!r.ok) missing(a); }, function () {});
+      } else {
+        a.href = BASE + f; a.target = "_blank"; a.rel = "noopener";
+      }
+    });
   })();
 
   updateProgress();
